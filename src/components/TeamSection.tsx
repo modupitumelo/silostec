@@ -9,7 +9,7 @@ export const TeamSection = () => {
       specialization: "IT Support and IT Systems Developer",
       email: "masilo@silostecsystems.co.za",
       phone: "+27 73 676 6985",
-      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      image: "/masilo.jpg"
     },
     {
       name: "Tumelo Modupi",
@@ -17,7 +17,7 @@ export const TeamSection = () => {
       specialization: "Frontend & Backend Development",
       email: "tumelo@silostecsystems.co.za",
       phone: "+27 76 736 2968",
-      image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      image: "/tumelo.jpg"
     }
   ];
 

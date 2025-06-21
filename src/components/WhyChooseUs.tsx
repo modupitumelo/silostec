@@ -53,7 +53,7 @@ export const WhyChooseUs = () => {
               key={index}
               className="bg-slate-50 rounded-lg p-6 shadow-md hover:shadow-lg transition-all hover:bg-slate-100"
             >
-              <div className="bg-red-600 rounded-full w-12 h-12 flex items-center justify-center mb-4 text-white">
+              <div className="bg-blue-600 rounded-full w-12 h-12 flex items-center justify-center mb-4 text-white">
                 {reason.icon}
               </div>
               

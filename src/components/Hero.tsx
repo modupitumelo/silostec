@@ -39,7 +39,7 @@ export const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <a 
                 href="#services" 
-                className="bg-red-600 hover:bg-red-700 transition-colors py-3 px-6 rounded-lg font-medium shadow-lg hover:shadow-xl flex items-center justify-center group text-white"
+                className="bg-blue-600 hover:bg-blue-700 transition-colors py-3 px-6 rounded-lg font-medium shadow-lg hover:shadow-xl flex items-center justify-center group text-white"
               >
                 Explore Services
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

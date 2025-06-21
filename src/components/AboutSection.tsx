@@ -31,8 +31,8 @@ export const AboutSection = () => {
           
           <div className="relative rounded-lg overflow-hidden shadow-xl h-80 md:h-96">
             <img 
-              src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-              alt="IT professional helping a client" 
+              src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+              alt="IT professional working on technology solutions" 
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-blue-900/70 to-transparent flex items-end">

@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react';
-import { ArrowRight } from 'lucide-react';
 
 type ServiceCardProps = {
   icon: ReactNode;
@@ -27,12 +26,7 @@ export const ServiceCard = ({ icon, title, description, image }: ServiceCardProp
       
       <div className="p-6">
         <h3 className="text-xl font-bold text-slate-800 mb-3">{title}</h3>
-        <p className="text-slate-600 mb-4">{description}</p>
-        
-        <a href="#contact" className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors">
-          Learn more
-          <ArrowRight className="ml-2 h-4 w-4" />
-        </a>
+        <p className="text-slate-600">{description}</p>
       </div>
     </div>
   );
