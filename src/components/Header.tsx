@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import logo from './logo.png'; // adjust the path based on your folder structure
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +35,7 @@ export const Header = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <a href="#" className="flex items-center">
-              <img src={logo} alt="Logo" className="h-10 w-auto" />
+              <img src="/logo.png" alt="Logo" className="h-10 w-auto" />
             </a>
           </div>
 
