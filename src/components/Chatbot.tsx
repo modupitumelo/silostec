@@ -56,7 +56,7 @@ export const Chatbot = () => {
           messages: [
             {
               role: 'system',
-              content: `You are a helpful assistant for Silostec Systems, an IT company based in Hlohlokwe, South Africa. 
+              content: `You are a helpful assistant for Silostec Systems, an IT company based in Hlohlokwe, South Africa.
               
               Company Information:
               - Location: Opposite Garage, Hlohlokwe, Sekororo, Trichardtsdal, Limpopo, South Africa, 0890
@@ -92,18 +92,21 @@ export const Chatbot = () => {
       });
 
       const data = await response.json();
-      
-      if (data.choices && data.choices[0]) {
-        const botMessage: Message = {
-          id: (Date.now() + 1).toString(),
-          text: data.choices[0].message.content,
-          isBot: true,
-          timestamp: new Date()
-        };
-        setMessages(prev => [...prev, botMessage]);
-      } else {
-        throw new Error('Invalid response format');
-      }
+      console.log('OpenRouter API Response:', data); // ✅ See actual format
+
+      const content =
+        data.choices?.[0]?.message?.content ||
+        data.choices?.[0]?.content ||
+        'I\'m sorry, I didn’t get a valid response.';
+
+      const botMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        text: content,
+        isBot: true,
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, botMessage]);
+
     } catch (error) {
       console.error('Error sending message:', error);
       const errorMessage: Message = {
