@@ -8,58 +8,49 @@ export const ServicesSection = () => {
       icon: <Globe className="h-8 w-8" />,
       title: "Web Development",
       description: "Custom websites and web applications built with modern technologies to establish your online presence.",
-      color: "border-red-600",
-      hoverColor: "bg-red-700"
+      image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
-    
     {
       icon: <ShoppingBag className="h-8 w-8" />,
       title: "Point of Sale (POS) Systems",
       description: "User-friendly POS solutions with inventory tracking, sales analytics, and payment processing capabilities.",
-      color: "border-red-600",
-      hoverColor: "bg-red-700"
+      image: "https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
     {
       icon: <FileText className="h-8 w-8" />,
       title: "Invoicing & Billing Systems",
       description: "Automated billing solutions that simplify invoice creation, delivery, and payment tracking.",
-      color: "border-blue-600",
-      hoverColor: "bg-blue-700"
+      image: "https://images.pexels.com/photos/6863183/pexels-photo-6863183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
     {
       icon: <HelpCircle className="h-8 w-8" />,
       title: "IT Support & Maintenance",
       description: "Reliable technical support and regular system maintenance to keep your business running smoothly.",
-      color: "border-red-600",
-      hoverColor: "bg-red-700"
+      image: "https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
     {
       icon: <Code className="h-8 w-8" />,
       title: "Custom Software Development",
       description: "Tailored software solutions designed specifically for your business needs and challenges.",
-      color: "border-blue-600",
-      hoverColor: "bg-blue-700"
+      image: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
     {
       icon: <Network className="h-8 w-8" />,
       title: "Networking & IT Infrastructure",
       description: "Setup and maintenance of efficient, secure networks and IT infrastructure for your business.",
-      color: "border-red-600",
-      hoverColor: "bg-red-700"
+      image: "https://images.pexels.com/photos/159304/network-cable-ethernet-computer-159304.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
     {
       icon: <Lock className="h-8 w-8" />,
       title: "IT Security",
       description: "Comprehensive security solutions to protect your business data and digital assets.",
-      color: "border-blue-600",
-      hoverColor: "bg-blue-700"
+      image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
     {
       icon: <Cloud className="h-8 w-8" />,
       title: "Remote & Cloud Computing",
       description: "Cloud-based solutions that provide flexibility and accessibility for your business needs.",
-      color: "border-red-600",
-      hoverColor: "bg-red-700"
+      image: "https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     }
   ];
 
@@ -81,8 +72,7 @@ export const ServicesSection = () => {
               icon={service.icon}
               title={service.title}
               description={service.description}
-              color={service.color}
-              hoverColor={service.hoverColor}
+              image={service.image}
             />
           ))}
         </div>

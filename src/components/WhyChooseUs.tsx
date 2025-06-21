@@ -36,12 +36,12 @@ export const WhyChooseUs = () => {
   ];
 
   return (
-    <section id="why-choose-us" className="py-16 md:py-24 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white">
+    <section id="why-choose-us" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Us</h2>
-          <div className="w-20 h-1 bg-white mx-auto mb-6"></div>
-          <p className="text-lg text-blue-100">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Why Choose Us</h2>
+          <div className="w-20 h-1 bg-red-600 mx-auto mb-6"></div>
+          <p className="text-lg text-slate-600">
             What makes Silostec Systems different from other IT companies? Our deep understanding of 
             rural communities and commitment to local empowerment.
           </p>
@@ -51,14 +51,14 @@ export const WhyChooseUs = () => {
           {reasons.map((reason, index) => (
             <div 
               key={index}
-              className="bg-white/10 backdrop-blur-sm rounded-lg p-6 shadow-md hover:shadow-lg transition-all hover:bg-white/20"
+              className="bg-slate-50 rounded-lg p-6 shadow-md hover:shadow-lg transition-all hover:bg-slate-100"
             >
-              <div className="bg-red-600 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+              <div className="bg-red-600 rounded-full w-12 h-12 flex items-center justify-center mb-4 text-white">
                 {reason.icon}
               </div>
               
-              <h3 className="text-xl font-bold mb-3">{reason.title}</h3>
-              <p className="text-blue-100">{reason.description}</p>
+              <h3 className="text-xl font-bold text-slate-800 mb-3">{reason.title}</h3>
+              <p className="text-slate-600">{reason.description}</p>
             </div>
           ))}
         </div>

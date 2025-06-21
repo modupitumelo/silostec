@@ -35,7 +35,7 @@ export const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Services</h3>
             <ul className="space-y-2">
-              
+              <li><a href="#services" className="hover:text-white transition-colors">Web Development</a></li>
               <li><a href="#services" className="hover:text-white transition-colors">POS Systems</a></li>
               <li><a href="#services" className="hover:text-white transition-colors">Invoicing & Billing</a></li>
               <li><a href="#services" className="hover:text-white transition-colors">IT Support</a></li>
@@ -50,6 +50,7 @@ export const Footer = () => {
               <li><a href="#services" className="hover:text-white transition-colors">What We Do</a></li>
               <li><a href="#case-studies" className="hover:text-white transition-colors">Our Journey</a></li>
               <li><a href="#why-choose-us" className="hover:text-white transition-colors">Why Choose Us</a></li>
+              <li><a href="#team" className="hover:text-white transition-colors">Our Team</a></li>
               <li><a href="#contact" className="hover:text-white transition-colors">Get In Touch</a></li>
             </ul>
           </div>

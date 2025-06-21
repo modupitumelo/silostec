@@ -23,11 +23,6 @@ export const Hero = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-24">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-              <MonitorSmartphone className="h-5 w-5 text-red-400 mr-2" />
-              <span className="text-white">Empowering South African Businesses</span>
-            </div>
-
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-blue-400">
                 IT Solutions

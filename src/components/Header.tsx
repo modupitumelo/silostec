@@ -29,26 +29,20 @@ export const Header = () => {
     { name: 'What We Do', href: '#services' },
     { name: 'Our Journey', href: '#case-studies' },
     { name: 'Why Choose Us', href: '#why-choose-us' },
+    { name: 'Our Team', href: '#team' },
     { name: 'Get In Touch', href: '#contact' },
   ];
 
   return (
-    <header 
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-white shadow-md py-2' 
-          : 'bg-transparent py-4'
-      }`}
-    >
+    <header className="fixed w-full z-50 bg-white shadow-md py-2 transition-all duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <a href="#" className="flex items-center">
               <MonitorSmartphone className="h-8 w-8 text-blue-600" />
-             <span className={`ml-2 text-xl font-bold transition-colors duration-300 ${scrolled ? 'text-slate-800' : 'text-white'}`}>
-  Silostec Systems
-</span>
-
+              <span className="ml-2 text-xl font-bold text-slate-800">
+                Silostec Systems
+              </span>
             </a>
           </div>
           
@@ -56,29 +50,23 @@ export const Header = () => {
             <ul className="flex space-x-8">
               {navLinks.map((link) => (
                 <li key={link.name}>
-                <a 
-  href={link.href} 
-  className={`text-sm font-medium transition-colors duration-300 ${
-    scrolled ? 'text-slate-700 hover:text-blue-600' : 'text-white hover:text-blue-300'
-  }`}
->
-  {link.name}
-</a>
-
+                  <a 
+                    href={link.href} 
+                    className="text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors duration-300"
+                  >
+                    {link.name}
+                  </a>
                 </li>
               ))}
             </ul>
           </nav>
 
           <div className="md:hidden">
-          <button 
-  onClick={toggleMenu}
-  className={`inline-flex items-center justify-center p-2 rounded-md transition-colors duration-300 ${
-    scrolled ? 'text-slate-800 hover:text-blue-600' : 'text-white hover:text-blue-300'
-  } focus:outline-none`}
-  aria-expanded="false"
->
-
+            <button 
+              onClick={toggleMenu}
+              className="inline-flex items-center justify-center p-2 rounded-md text-slate-800 hover:text-blue-600 transition-colors duration-300 focus:outline-none"
+              aria-expanded="false"
+            >
               <span className="sr-only">Open main menu</span>
               {isOpen ? (
                 <X className="block h-6 w-6" aria-hidden="true" />
