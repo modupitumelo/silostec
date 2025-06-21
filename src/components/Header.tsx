@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import logo from '../assets/logo.png'; // adjust the path based on your folder structure
+import logo from './logo.png'; // adjust the path based on your folder structure
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
