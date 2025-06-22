@@ -48,7 +48,7 @@ export const Chatbot = () => {
       const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
         method: 'POST',
         headers: {
-          'Authorization': 'Bearer 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',
+          'Authorization': 'Bearer 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',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
@@ -66,20 +66,34 @@ export const Chatbot = () => {
               - Working Hours: Monday-Friday 08:00-18:00, Saturday-Sunday 08:00-15:00
               
               Services:
-              - Web Development
-              - Point of Sale (POS) Systems
-              - Invoicing & Billing Systems
-              - IT Support & Maintenance
-              - Custom Software Development
-              - Networking & IT Infrastructure
-              - IT Security
-              - Remote & Cloud Computing
+              - Web Development: Custom websites and web applications built with modern technologies
+              - Point of Sale (POS) Systems: User-friendly POS solutions with inventory tracking, sales analytics, and payment processing
+              - Invoicing & Billing Systems: Automated billing solutions that simplify invoice creation, delivery, and payment tracking
+              - IT Support & Maintenance: Reliable technical support and regular system maintenance
+              - Custom Software Development: Tailored software solutions designed specifically for business needs
+              - Networking & IT Infrastructure: Setup and maintenance of efficient, secure networks and IT infrastructure
+              - IT Security: Comprehensive security solutions to protect business data and digital assets
+              - Remote & Cloud Computing: Cloud-based solutions that provide flexibility and accessibility
               
               Team:
               - Masilo Sekgoka: Founder & CEO, IT Support and IT Systems Developer (masilo@silostecsystems.co.za, +27 73 676 6985)
               - Tumelo Modupi: Web Developer (tumelo@silostecsystems.co.za, +27 76 736 2968)
               
-              Keep responses helpful, professional, and focused on how Silostec Systems can help with IT solutions. If asked about services not offered, politely redirect to available services.`
+              Case Studies:
+              - Christian Fire Church: Financial Management Systems - designed robust system to streamline financial records, reporting, and budget management
+              - Branels Furniture: Point of Sale Systems - custom POS systems with barcode scanning, stock tracking, lay-by payments, and sales reporting
+              - MMJ Group: Invoicing Systems - easy-to-use invoicing systems with customizable invoices, automated billing, and payment integration
+              - Maruleng Gender-Based Violence Center: IT Support - providing technical support, secure network management, and staff training
+              
+              Why Choose Silostec Systems:
+              - Local Understanding: Based in rural community, understand challenges like poor connectivity and limited infrastructure
+              - On-the-Ground Support: Provide on-site technical support and regular maintenance visits
+              - Affordable Solutions: Cost-effective IT setups that are easy to maintain and long-lasting
+              - Fast Response Times: Quick response even in remote areas to minimize downtime
+              - Building Local Skills: Offer training and guidance so teams can manage basic IT tasks
+              - Trusted & Secure: Prioritize data security and confidentiality
+              
+              Keep responses helpful, professional, and focused on how Silostec Systems can help with IT solutions. If asked about services not offered, politely redirect to available services. Be conversational and friendly while maintaining professionalism.`
             },
             {
               role: 'user',
@@ -92,12 +106,9 @@ export const Chatbot = () => {
       });
 
       const data = await response.json();
-      console.log('OpenRouter API Response:', data); // ✅ See actual format
-
-      const content =
-        data.choices?.[0]?.message?.content ||
-        data.choices?.[0]?.content ||
-        'I\'m sorry, I didn\'t get a valid response.';
+      
+      const content = data.choices?.[0]?.message?.content || 
+                     'I apologize, but I\'m having trouble processing your request right now. Please feel free to contact us directly at 073 676 6985 or info@silostecsystems.co.za for immediate assistance.';
 
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
@@ -146,8 +157,8 @@ export const Chatbot = () => {
             <div className="flex items-center">
               <Bot className="h-5 w-5 sm:h-6 sm:w-6 mr-2 flex-shrink-0" />
               <div className="min-w-0 flex-1">
-                <h3 className="font-semibold text-sm sm:text-base truncate">Silostec Assistant</h3>
-                <p className="text-xs text-blue-100 truncate">Ask me anything about our services</p>
+                <h3 className="font-semibold text-sm sm:text-base truncate">Silostec AI Assistant</h3>
+                <p className="text-xs text-blue-100 truncate">Powered by AI - Ask me anything!</p>
               </div>
             </div>
           </div>
@@ -199,7 +210,7 @@ export const Chatbot = () => {
                 value={inputMessage}
                 onChange={(e) => setInputMessage(e.target.value)}
                 onKeyPress={handleKeyPress}
-                placeholder="Type your message..."
+                placeholder="Ask me about our services..."
                 className="flex-1 px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-xs sm:text-sm min-w-0"
                 disabled={isLoading}
               />
