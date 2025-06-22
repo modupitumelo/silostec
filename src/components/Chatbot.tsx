@@ -50,6 +50,8 @@ export const Chatbot = () => {
         headers: {
           'Authorization': 'Bearer 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',
           'Content-Type': 'application/json',
+          'HTTP-Referer': window.location.origin,
+          'X-Title': 'Silostec Systems Chatbot'
         },
         body: JSON.stringify({
           model: 'meta-llama/llama-3.1-8b-instruct:free',
@@ -105,10 +107,30 @@ export const Chatbot = () => {
         })
       });
 
+      if (!response.ok) {
+        console.error('API Response Status:', response.status);
+        console.error('API Response Text:', await response.text());
+        throw new Error(`API request failed with status ${response.status}`);
+      }
+
       const data = await response.json();
+      console.log('OpenRouter API Response:', data);
+
+      let content = '';
       
-      const content = data.choices?.[0]?.message?.content || 
-                     'I apologize, but I\'m having trouble processing your request right now. Please feel free to contact us directly at 073 676 6985 or info@silostecsystems.co.za for immediate assistance.';
+      // Handle different possible response formats
+      if (data.choices && data.choices.length > 0) {
+        content = data.choices[0].message?.content || data.choices[0].text || '';
+      } else if (data.content) {
+        content = data.content;
+      } else if (data.response) {
+        content = data.response;
+      }
+
+      if (!content) {
+        console.error('No content found in response:', data);
+        content = 'I apologize, but I\'m having trouble processing your request right now. Please feel free to contact us directly at 073 676 6985 or info@silostecsystems.co.za for immediate assistance.';
+      }
 
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
