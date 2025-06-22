@@ -44,11 +44,25 @@ export const Chatbot = () => {
     setInputMessage('');
     setIsLoading(true);
 
+    // Check if API key is configured
+    const apiKey = import.meta.env.VITE_OPENROUTER_API_KEY;
+    if (!apiKey || apiKey === 'your_openrouter_api_key_here') {
+      const errorMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        text: 'The chatbot is currently not configured. Please contact us directly at 073 676 6985 or info@silostecsystems.co.za for immediate assistance.',
+        isBot: true,
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, errorMessage]);
+      setIsLoading(false);
+      return;
+    }
+
     try {
       const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
         method: 'POST',
         headers: {
-          'Authorization': 'Bearer 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',
+          'Authorization': `Bearer ${apiKey}`,
           'Content-Type': 'application/json',
           'HTTP-Referer': window.location.origin,
           'X-Title': 'Silostec Systems Chatbot'
@@ -109,8 +123,18 @@ export const Chatbot = () => {
 
       if (!response.ok) {
         console.error('API Response Status:', response.status);
-        console.error('API Response Text:', await response.text());
-        throw new Error(`API request failed with status ${response.status}`);
+        const responseText = await response.text();
+        console.error('API Response Text:', responseText);
+        
+        let errorText = 'I apologize, but I\'m having trouble processing your request right now. Please feel free to contact us directly at 073 676 6985 or info@silostecsystems.co.za for immediate assistance.';
+        
+        if (response.status === 401) {
+          errorText = 'The chatbot authentication needs to be updated. Please contact us directly at 073 676 6985 or info@silostecsystems.co.za for immediate assistance.';
+        } else if (response.status === 429) {
+          errorText = 'I\'m currently experiencing high demand. Please try again in a moment or contact us directly at 073 676 6985 or info@silostecsystems.co.za.';
+        }
+        
+        throw new Error(errorText);
       }
 
       const data = await response.json();
@@ -144,7 +168,7 @@ export const Chatbot = () => {
       console.error('Error sending message:', error);
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: 'I apologize, but I\'m having trouble connecting right now. Please feel free to contact us directly at 073 676 6985 or info@silostecsystems.co.za for immediate assistance.',
+        text: error instanceof Error ? error.message : 'I apologize, but I\'m having trouble connecting right now. Please feel free to contact us directly at 073 676 6985 or info@silostecsystems.co.za for immediate assistance.',
         isBot: true,
         timestamp: new Date()
       };
